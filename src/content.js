@@ -133,7 +133,9 @@ async function loadExistingNotes() {
 // Listen for messages from the popup
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === "createNote") {
-    new StickyNote({});
+    new StickyNote({
+      position: { x: window.scrollX + 100, y: window.scrollY + 100 },
+    });
   }
 });
 
