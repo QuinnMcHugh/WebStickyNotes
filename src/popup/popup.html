@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web Post-its</title>
+    <style>
+      body {
+        width: 200px;
+        padding: 10px;
+        font-family: Arial, sans-serif;
+      }
+
+      button {
+        width: 100%;
+        padding: 8px;
+        background-color: #ffd700;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-bottom: 8px;
+      }
+
+      button:hover {
+        background-color: #ffed4a;
+      }
+
+      .dashboard-link {
+        display: block;
+        text-align: center;
+        color: #666;
+        text-decoration: none;
+        font-size: 12px;
+      }
+
+      .dashboard-link:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="addNote">Add New Sticky Note</button>
+    <a href="../dashboard/dashboard.html" target="_blank" class="dashboard-link"
+      >View All Notes</a
+    >
+    <script src="popup.js"></script>
+  </body>
+</html>

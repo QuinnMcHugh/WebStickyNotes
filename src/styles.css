@@ -1,0 +1,45 @@
+.web-post-it {
+  position: absolute;
+  min-width: 150px;
+  min-height: 150px;
+  background-color: #ffd700;
+  padding: 15px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+  cursor: move;
+  font-family: Arial, sans-serif;
+  z-index: 10000;
+}
+
+.web-post-it .controls {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: flex;
+  gap: 5px;
+}
+
+.web-post-it .edit-btn,
+.web-post-it .delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+.web-post-it .edit-btn:hover,
+.web-post-it .delete-btn:hover {
+  opacity: 1;
+}
+
+.web-post-it textarea {
+  width: 100%;
+  height: calc(100% - 30px);
+  border: none;
+  background: transparent;
+  resize: none;
+  font-family: inherit;
+  margin-top: 20px;
+}

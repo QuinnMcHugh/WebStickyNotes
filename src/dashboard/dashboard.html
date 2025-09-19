@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web Post-its Dashboard</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+
+      h1 {
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .notes-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .note-card {
+        background-color: #ffd700;
+        padding: 15px;
+        border-radius: 4px;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .note-url {
+        font-size: 12px;
+        color: #666;
+        margin-bottom: 10px;
+        word-break: break-all;
+      }
+
+      .note-text {
+        width: 100%;
+        min-height: 100px;
+        border: none;
+        background: transparent;
+        resize: none;
+        font-family: inherit;
+        margin-bottom: 10px;
+      }
+
+      .note-controls {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+      }
+
+      button {
+        padding: 5px 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .save-btn {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      .delete-btn {
+        background-color: #f44336;
+        color: white;
+      }
+
+      .no-notes {
+        text-align: center;
+        color: #666;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>All Sticky Notes</h1>
+    <div id="notesContainer" class="notes-container"></div>
+    <script src="dashboard.js"></script>
+  </body>
+</html>
