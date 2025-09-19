@@ -1,4 +1,4 @@
-# README
+# WebStickyNotes
 
 ### Purpose
 
