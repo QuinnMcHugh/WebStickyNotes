@@ -130,11 +130,32 @@ async function loadExistingNotes() {
   }
 }
 
-// Listen for messages from the popup
+// Store the last right-click position
+let lastContextMenuPos = { x: 0, y: 0 };
+
+// Track right-click position
+document.addEventListener("contextmenu", (e) => {
+  lastContextMenuPos = { x: e.clientX, y: e.clientY };
+});
+
+// Listen for messages from the popup and background
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === "createNote") {
-    new StickyNote({
-      position: { x: window.scrollX + 100, y: window.scrollY + 100 },
+    let position;
+    if (request.position?.fromContextMenu) {
+      // Use the stored context menu position
+      position = {
+        x: lastContextMenuPos.x + window.scrollX,
+        y: lastContextMenuPos.y + window.scrollY,
+      };
+    } else {
+      // Default position for popup button
+      position = { x: window.scrollX + 100, y: window.scrollY + 100 };
+    }
+
+    const note = new StickyNote({
+      position: position,
+      text: request.text || "", // Use selected text if provided
     });
   }
 });
