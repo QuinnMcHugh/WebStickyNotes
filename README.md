@@ -17,3 +17,7 @@ You are going to help me build a browser extension that will allow users to add 
 ```
 
 With some very minor manual tweaks and a few follow-up prompts, the app as you see it now was complete.
+
+### Demo
+
+![GIF demo](./webstickiesdemo.gif)
