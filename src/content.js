@@ -30,7 +30,6 @@ class StickyNote {
 
     const textarea = document.createElement("textarea");
     textarea.value = this.text;
-    textarea.readOnly = true;
     textarea.addEventListener("input", () => this.updateText(textarea.value));
 
     controls.appendChild(editBtn);
@@ -74,7 +73,6 @@ class StickyNote {
 
   toggleEdit() {
     const textarea = this.element.querySelector("textarea");
-    textarea.readOnly = !textarea.readOnly;
     textarea.focus();
   }
 
