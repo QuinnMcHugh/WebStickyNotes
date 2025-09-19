@@ -36,7 +36,7 @@
 
 .web-post-it textarea {
   width: 100%;
-  height: calc(100% - 30px);
+  min-height: 120px;
   border: none;
   background: transparent;
   resize: none;
