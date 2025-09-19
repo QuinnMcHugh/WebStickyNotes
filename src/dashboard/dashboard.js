@@ -32,6 +32,7 @@ function createNoteCard(url, noteId, noteData) {
   const textarea = document.createElement("textarea");
   textarea.className = "note-text";
   textarea.value = noteData.text;
+  let originalText = noteData.text;
 
   const contentContainer = document.createElement("div");
   contentContainer.className = "note-content";
@@ -44,9 +45,17 @@ function createNoteCard(url, noteId, noteData) {
   const saveBtn = document.createElement("button");
   saveBtn.className = "save-btn";
   saveBtn.textContent = "Save";
-  saveBtn.addEventListener("click", () =>
-    saveNote(url, noteId, textarea.value, noteData.position)
-  );
+  saveBtn.disabled = true;
+  saveBtn.addEventListener("click", () => {
+    saveNote(url, noteId, textarea.value, noteData.position);
+    originalText = textarea.value;
+    saveBtn.disabled = true;
+  });
+
+  // Add input event listener to textarea to track changes
+  textarea.addEventListener("input", () => {
+    saveBtn.disabled = textarea.value === originalText;
+  });
 
   const deleteBtn = document.createElement("button");
   deleteBtn.className = "delete-btn";

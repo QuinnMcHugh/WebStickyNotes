@@ -64,6 +64,13 @@
       .save-btn {
         background-color: #4caf50;
         color: white;
+        transition: opacity 0.2s;
+      }
+
+      .save-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        background-color: #666;
       }
 
       .delete-btn {
