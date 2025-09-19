@@ -23,9 +23,11 @@ function createNoteCard(url, noteId, noteData) {
   const card = document.createElement("div");
   card.className = "note-card";
 
-  const urlDiv = document.createElement("div");
-  urlDiv.className = "note-url";
-  urlDiv.textContent = url;
+  const urlElement = document.createElement("a");
+  urlElement.className = "note-url";
+  urlElement.textContent = url;
+  urlElement.href = url;
+  urlElement.target = "_blank";
 
   const textarea = document.createElement("textarea");
   textarea.className = "note-text";
@@ -33,7 +35,7 @@ function createNoteCard(url, noteId, noteData) {
 
   const contentContainer = document.createElement("div");
   contentContainer.className = "note-content";
-  contentContainer.appendChild(urlDiv);
+  contentContainer.appendChild(urlElement);
   contentContainer.appendChild(textarea);
 
   const controls = document.createElement("div");
